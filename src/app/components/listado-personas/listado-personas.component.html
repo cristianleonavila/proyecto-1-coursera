@@ -1,0 +1,26 @@
+<table class="table table-hover" *ngIf="listadoPersonas.length > 0; else sinRegistros;">
+    <thead>
+        <tr class="bg-secondary text-white">
+            <th class="bg-secondary text-white">#</th>
+            <th class="bg-secondary text-white">Nombres</th>
+            <th class="bg-secondary text-white">Apellidos</th>
+            <th class="bg-secondary text-white">Género</th>
+            <th class="bg-secondary text-white">Ocupación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of listadoPersonas; let i = index;">
+            <td>{{ i + 1 }}</td>
+            <td>{{ persona.nombre }}</td>
+            <td>{{ persona.apellido }}</td>
+            <td>
+                <img class="rounded-circle" [src]="persona.avatar" *ngIf="persona.genero">
+            </td>
+            <td>{{ persona.ocupacion }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #sinRegistros>
+    <div class="alert alert-info text-center">No hay registros</div>
+</ng-template>

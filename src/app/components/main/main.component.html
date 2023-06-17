@@ -1,0 +1,10 @@
+<h1 claseTitulo>Proyecto Semana 1 - Coursera</h1>
+<hr>
+<div class="row">
+    <div class="col-3">
+        <app-registro-persona (getPersona)="agregarPersona($event)"></app-registro-persona>
+    </div>
+    <div class="col-9">
+        <app-listado-personas [listadoPersonas]="getPersonas"></app-listado-personas>
+    </div>
+</div>
